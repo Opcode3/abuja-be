@@ -28,14 +28,13 @@
             <li><a href="./events.html">Our Events</a></li>
           </ul>
 
-          <div class="btnMenu">
+          <div id="open" class="btnMenu">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
               stroke-width="1.5"
               stroke="currentColor"
-              class="w-6 h-6"
             >
               <path
                 stroke-linecap="round"
@@ -52,6 +51,16 @@
           <li><a href="">Join Us</a></li>
         </ul>
       </header>
+      <div class="mobile">
+        <span id="cancelBtn">Cancel</span>
+        <ul>
+          <li><a href="./" class="active">Home</a></li>
+          <li><a href="./about.html">About Us</a></li>
+          <li><a href="./events.html">Our Events</a></li>
+          <li><a href="./contact-us.html">Contact Us</a></li>
+          <li><a href="">Join Us</a></li>
+        </ul>
+      </div>
       <main>
         <section id="slider" class="heroslide">
           <div class="swiper-wrapper">
@@ -127,8 +136,10 @@
             </p>
           </li>
         </ul>
-        <div class="">
-          <p></p>
+        <div id="bottom">
+          <p>&copy; 2024 | All Right Reserved.</p>
+
+          <a href="">Developed by <b>ContriveLab</b></a>
         </div>
       </footer>
     </div>
@@ -149,6 +160,18 @@
         //   el: ".swiper-pagination",
         clickable: true,
       },
+    });
+
+    const cancelBtn = document.getElementById("cancelBtn");
+    const openBtn = document.getElementById("open");
+    const mobileNav = document.querySelector(".mobile");
+
+    cancelBtn.addEventListener("click", function () {
+      mobileNav.classList.remove("toggle");
+    });
+
+    openBtn.addEventListener("click", function () {
+      mobileNav.classList.add("toggle");
     });
   </script>
 </html>
